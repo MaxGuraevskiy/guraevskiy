@@ -1,0 +1,66 @@
+.logo_container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.logo_img_content {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-right: 1.2rem;
+}
+
+.logo_img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  display: block;
+}
+
+.logo_sub {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.link {
+  padding: 2.2rem 1rem;
+  display: inline-block;
+  font-size: 1.6rem;
+  /* color: #333; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  translate: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15rem 5rem 15rem 5rem;
+  background-color: var(--background);
+}
