@@ -78,7 +78,7 @@ function Header() {
         <div className="hidden mobile:!flex">
           <ul className={classNames("flex", {})}>
             {headerLinksData.map(({ href, label }, i) => (
-              <li key={i}>
+              <li key={`headerlink${i}`}>
                 <HeaderLinks href={href} label={label} />
               </li>
             ))}
@@ -129,7 +129,7 @@ function Header() {
         </button>
         <ul className={classNames("flex flex-col", {})}>
           {headerLinksData.map(({ href, label }, i) => (
-            <li key={i}>
+            <li key={`modallink${i}`}>
               <HeaderLinks href={href} label={label} />
             </li>
           ))}

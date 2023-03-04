@@ -42,7 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${sans_pro.variable} ${manrope.variable}`}>
-      <body>
+      <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y">
         <Header />
         {/* <SideNav /> */}
         <Suspense fallback={<HomeLoading />}>{children}</Suspense>
