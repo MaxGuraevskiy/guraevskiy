@@ -13,7 +13,7 @@ import sun_path from "@/public/sun.svg";
 import moon_path from "@/public/moon.svg";
 import menu_close_path from "@/public/close.svg";
 
-function header() {
+function Header() {
   // Header Links Type
   type headerLinksDataType = { href: string; label: string };
   // Header Links Data
@@ -78,7 +78,9 @@ function header() {
         <div className="hidden mobile:!flex">
           <ul className={classNames("flex", {})}>
             {headerLinksData.map(({ href, label }, i) => (
-              <HeaderLinks href={href} label={label} />
+              <li key={i}>
+                <HeaderLinks href={href} label={label} />
+              </li>
             ))}
           </ul>
         </div>
@@ -127,7 +129,9 @@ function header() {
         </button>
         <ul className={classNames("flex flex-col", {})}>
           {headerLinksData.map(({ href, label }, i) => (
-            <HeaderLinks href={href} label={label} />
+            <li key={i}>
+              <HeaderLinks href={href} label={label} />
+            </li>
           ))}
         </ul>
 
@@ -150,4 +154,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;
