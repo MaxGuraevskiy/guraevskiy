@@ -24,7 +24,7 @@ function Header() {
   // Header Links function
   const HeaderLinks = ({ href, label }: { href: string; label: string }) => {
     return (
-      <li className="">
+      <div>
         <Link
           className={classNames(
             styles.link,
@@ -37,7 +37,7 @@ function Header() {
         >
           {label}
         </Link>
-      </li>
+      </div>
     );
   };
 
@@ -88,10 +88,10 @@ function Header() {
         <div className="flex flex-row space-x-3">
           {/* Download button resume */}
           <a
-            href="guraevskiymaxim.pdf"
+            href="download/guraevskiymaxim.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:animate-pulse"
+            className="hover:animate-pulse hidden verysmallscreen:!flex"
           >
             <p
               className={classNames(
@@ -134,6 +134,22 @@ function Header() {
             </li>
           ))}
         </ul>
+
+        <a
+          href="download/guraevskiymaxim.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:animate-pulse"
+        >
+          <p
+            className={classNames(
+              styles.link,
+              "font-sans_pro hover:text-[#8e57f7]"
+            )}
+          >
+            Резюме
+          </p>
+        </a>
 
         <div className="flex flex-col">
           <h2 className="font-manrope text-[2rem] font-semibold">Ссылки</h2>
