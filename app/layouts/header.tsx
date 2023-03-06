@@ -22,7 +22,7 @@ function Header() {
     { href: "/about", label: "Обо мне" },
   ];
   // Header Links function
-  const HeaderLinks = ({ href, label }: { href: string; label: string }) => {
+  const HeaderLinks = ({ href, label }: headerLinksDataType) => {
     return (
       <div>
         <Link
@@ -46,19 +46,19 @@ function Header() {
 
   return (
     <header className="bg-darkBg">
-      <div className={classNames(styles.content, "small:!px-20 small:!py-4")}>
+      <nav className={classNames(styles.content, "small:!px-20 small:!py-4")}>
         {/* Logo and Name */}
         <Link href={"/"} className={styles.logo_container}>
           {/* Image logo container */}
           <div
             className={classNames(
               styles.logo_img_content,
-              "small:!w-20 small:!h-20 small:!mr-[1.5rem]"
+              "small:w-20 small:h-20"
             )}
           >
             {/* Image */}
             <Image
-              className={styles.logo_img}
+              className={classNames(styles.logo_img, "small:!mr-[1.5rem]")}
               src={me_logo_path}
               alt="me logo"
             />
@@ -85,7 +85,7 @@ function Header() {
           </ul>
         </div>
 
-        <div className="flex flex-row space-x-3">
+        <div className="flex flex-row items-center space-x-3">
           {/* Download button resume */}
           <a
             href="download/guraevskiymaxim.pdf"
@@ -108,14 +108,19 @@ function Header() {
             onClick={() => {
               setIsBurgerOpen(true);
             }}
+            className="w-8 h-8 "
           >
-            <Image src={burgerMenu_path} alt="burger menu icon" />
+            <Image
+              src={burgerMenu_path}
+              alt="burger menu icon"
+              className="w-full h-full"
+            />
           </button>
         </div>
-      </div>
+      </nav>
       {/* Modal window */}
-      <div
-        className={classNames(styles.modal, "transition", {
+      <nav
+        className={classNames(styles.modal, "transition ", {
           "flex flex-col mobile:flex-row": isBurgerOpen,
         })}
       >
@@ -127,6 +132,7 @@ function Header() {
         >
           <Image src={menu_close_path} alt="close modal search" />
         </button>
+
         <ul className={classNames("flex flex-col", {})}>
           {headerLinksData.map(({ href, label }, i) => (
             <li key={`modallink${i}`}>
@@ -165,7 +171,7 @@ function Header() {
             </Link>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

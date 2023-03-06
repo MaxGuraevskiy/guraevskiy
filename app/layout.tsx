@@ -41,10 +41,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sans_pro.variable} ${manrope.variable}`}>
+    <html lang="ru" className={`${sans_pro.variable} ${manrope.variable}`}>
       <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y">
         <Header />
-        {/* <SideNav /> */}
         <Suspense fallback={<HomeLoading />}>{children}</Suspense>
         <Footer />
       </body>

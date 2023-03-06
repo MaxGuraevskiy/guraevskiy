@@ -8,9 +8,8 @@
 .logo_img_content {
   width: 4.5rem;
   height: 4.5rem;
-  border-radius: 50px;
   overflow: hidden;
-  margin-right: 1.2rem;
+  margin: 0.5rem 1.2rem 0.5rem 0rem;
 }
 
 .logo_img {
@@ -21,6 +20,7 @@
   -o-object-position: center;
   object-position: center;
   display: block;
+  border-radius: 50px;
 }
 
 .logo_sub {
