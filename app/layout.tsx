@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 import Footer from "./layouts/footer";
 import Header from "./layouts/header";
+import Blob from './layouts/blob'
 import HomeLoading from "./loading";
 
 import "./globals.css";
@@ -44,7 +45,10 @@ export default function RootLayout({
     <html lang="ru" className={`${sans_pro.variable} ${manrope.variable}`}>
       <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y">
         <Header />
-        <Suspense fallback={<HomeLoading />}>{children}</Suspense>
+        <Suspense fallback={<HomeLoading />}>
+          <Blob />
+          {children}
+        </Suspense>
         <Footer />
       </body>
     </html>
