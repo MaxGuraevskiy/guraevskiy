@@ -4,14 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
 
-import burgerMenu_path from "@/public/burgerMenu.svg";
 import styles from "./header.module.css";
 
-import me_logo_path from "@/public/me_logo.jpg";
-import me_main_path from "@/public/me_main.jpg";
-import sun_path from "@/public/sun.svg";
-import moon_path from "@/public/moon.svg";
-import menu_close_path from "@/public/close.svg";
+import me_logo_path from "@/public/header/me_logo.jpg";
+import burgerMenu_path from "@/public/header/burgerMenu.svg";
+import menu_close_path from "@/public/header/close.svg";
 
 function Header() {
   // Header Links Type

@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 
 import Footer from "./layouts/footer";
 import Header from "./layouts/header";
-import Blob from './layouts/blob'
 import HomeLoading from "./loading";
 
 import "./globals.css";
@@ -30,10 +29,11 @@ export const metadata: Metadata = {
   keywords: ["Next.js", "React", "JavaScript"],
   authors: [{ name: "Max", url: "https://nextjs.org" }],
   creator: "Maxim Guraevskiy",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  // themeColor: [
+  //   { media: "(prefers-color-scheme: light)", color: "white" },
+  //   { media: "(prefers-color-scheme: dark)", color: "black" },
+  // ],
+  themeColor: { color: "dark" },
 };
 
 export default function RootLayout({
@@ -43,12 +43,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className={`${sans_pro.variable} ${manrope.variable}`}>
-      <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y">
+      <body className="">
+        {/* <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y"> */}
         <Header />
-        <Suspense fallback={<HomeLoading />}>
-          <Blob />
-          {children}
-        </Suspense>
+        <Suspense fallback={<HomeLoading />}>{children}</Suspense>
         <Footer />
       </body>
     </html>
