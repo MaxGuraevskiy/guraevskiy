@@ -16,17 +16,19 @@ function getCard({
   imgPath,
   title,
   description,
+  alt,
 }: {
   cardRef: React.RefObject<HTMLDivElement>;
   imgPath: any;
   title: string;
   description: string;
+  alt: string;
 }) {
   return (
     <div className="card" ref={cardRef}>
       <div className="card-content">
         <div className="card-image">
-          <Image src={imgPath} alt="" className="card-image" />
+          <Image src={imgPath} alt={alt} className="card-image" />
         </div>
         <div className="card-info-wrapper">
           <div className="card-info">
@@ -55,36 +57,42 @@ function Section2() {
       imgPath: sneaker_path,
       title: "FlyBoots",
       description: "Маркетплейс для заказа товаров с Poizon",
+      alt: "Sneaker Icon",
     },
     {
       cardRef: card2,
       imgPath: checkpoint_path,
       title: "CheckPoint",
       description: "Кроссплатформенное мобильное приложение для КПП",
+      alt: "Checkpoint Icon",
     },
     {
       cardRef: card3,
       imgPath: construction_crane_path,
       title: "Legion",
       description: "Лендинг для девелоперской компании Legion",
+      alt: "Construction Crane Icon",
     },
     {
       cardRef: card4,
       imgPath: typography_path,
       title: "Typography",
       description: "Веб-приложение для осуществления деятельности типографии",
+      alt: "Printer Icon",
     },
     {
       cardRef: card5,
       imgPath: profile_path,
       title: "Guraevskiy",
       description: "You are already here!",
+      alt: "Profile Icon",
     },
     {
       cardRef: card6,
       imgPath: more_path,
       title: "Другие",
       description: 'Вы можете посмотреть другие работы на странице "РАБОТЫ"',
+      alt: "More Icon",
     },
   ];
 
