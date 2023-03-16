@@ -99,7 +99,7 @@ function Section3() {
   };
 
   return (
-    <section>
+    <section id="hobbies">
       <h1 className="font-sans_pro text-[5rem] pb-10">Увлечения</h1>
       <div
         id="image-track"
@@ -114,8 +114,9 @@ function Section3() {
           MoveHandle(e);
         }}
       >
-        {data.map((e) => (
+        {data.map((e, index) => (
           <Image
+            key={index}
             src={e.imgPath}
             alt={e.alt}
             ref={e.imgRef}
