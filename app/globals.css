@@ -30,16 +30,16 @@
   line-height: 1.5;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
   font-size: 62.5%;
   margin: 0;
-}
-
-body,
-main {
   color: var(--color);
   background-color: var(--background);
 }
@@ -162,6 +162,44 @@ footer {
     color-scheme: dark;
   }
 } */
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+a, label{
+	-webkit-tap-highlight-color: transparent;
+}
 
 @media only screen and (max-width: 75em) {
   html {
