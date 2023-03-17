@@ -246,10 +246,10 @@
 }
 
 #loading-indicator {
-  border-radius: 15px;
+  /* border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
-  -khtml-border-radius: 15px;
+  -khtml-border-radius: 15px; */
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
   margin: 20px auto;
   overflow: hidden;
@@ -266,6 +266,7 @@
   resize: none;
   font-size: 2rem;
   background-color: transparent;
+  outline: none !important;
   z-index: 3;
   padding: 10px;
 }
@@ -285,10 +286,10 @@
 }
 #loading-indicator:after {
   background-color: var(--background);
-  border-radius: 15px;
+  /* border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
-  -khtml-border-radius: 15px;
+  -khtml-border-radius: 15px; */
   height: calc(43.2633vmin - 4px);
   width: calc(70vmin - 4px);
 }

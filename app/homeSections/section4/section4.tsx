@@ -80,7 +80,7 @@ function Section4() {
             name="message"
           />
         </div>
-        <button type="submit" className="w-full border-2 rounded-[7px] z-[3]">
+        <button type="submit" className="w-full border-2 z-[3]">
           <h3 className="font-sans_pro text-[2rem] z-[3]">Отправить</h3>
         </button>
       </form>

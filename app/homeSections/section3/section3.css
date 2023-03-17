@@ -1,3 +1,7 @@
+#hobbies {
+  min-height: fit-content;
+}
+
 #image-track {
   display: flex;
   gap: 4vmin;
@@ -23,7 +27,7 @@
 
 input[type="range"] {
   -webkit-appearance: none;
-  margin: 5em 0;
+  margin: 5em 0 30em 0;
   width: 50vmin;
   z-index: 3;
 }
