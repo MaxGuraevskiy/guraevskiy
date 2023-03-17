@@ -1,9 +1,9 @@
-/* @media (prefers-reduced-motion) {
+@media (prefers-reduced-motion) {
   #wrapper {
     animation: none;
     display: none;
   }
-} */
+}
 
 #wrapper {
   aspect-ratio: 1.618;
@@ -286,6 +286,9 @@
 #loading-indicator:after {
   background-color: var(--background);
   border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -khtml-border-radius: 15px;
   height: calc(43.2633vmin - 4px);
   width: calc(70vmin - 4px);
 }
