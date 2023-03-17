@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import { Source_Sans_Pro, Manrope } from "next/font/google";
 import type { Metadata } from "next";
 
-import Footer from "./layouts/footer";
-import Header from "./layouts/header";
+import Footer from "./layouts/footer/footer";
+import Header from "./layouts/header/header";
 import HomeLoading from "./loading";
 
 import "./globals.css";
@@ -46,6 +46,9 @@ export default function RootLayout({
       <body className="">
         {/* <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y"> */}
         <Header />
+        <div className="">
+          
+        </div>
         <Suspense fallback={<HomeLoading />}>{children}</Suspense>
         <Footer />
       </body>

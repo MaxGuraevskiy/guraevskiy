@@ -11,38 +11,6 @@ import more_path from "@/public/section2/more.svg";
 
 import "./section2.css";
 
-function getCard({
-  cardRef,
-  imgPath,
-  title,
-  description,
-  alt,
-}: {
-  cardRef: React.RefObject<HTMLDivElement>;
-  imgPath: any;
-  title: string;
-  description: string;
-  alt: string;
-}) {
-  return (
-    <div className="card" ref={cardRef}>
-      <div className="card-content">
-        <div className="card-image">
-          <Image src={imgPath} alt={alt} className="card-image" />
-        </div>
-        <div className="card-info-wrapper">
-          <div className="card-info">
-            <div className="card-info-title">
-              <h3 className="font-sans_pro">{title}</h3>
-              <h4 className="font-manrope">{description}</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Section2() {
   const card1 = useRef<HTMLDivElement>(null),
     card2 = useRef<HTMLDivElement>(null),
@@ -63,7 +31,7 @@ function Section2() {
       cardRef: card2,
       imgPath: checkpoint_path,
       title: "CheckPoint",
-      description: "Кроссплатформенное мобильное приложение для КПП",
+      description: "Мобильное приложение для КПП",
       alt: "Checkpoint Icon",
     },
     {
@@ -77,28 +45,30 @@ function Section2() {
       cardRef: card4,
       imgPath: typography_path,
       title: "Typography",
-      description: "Веб-приложение для осуществления деятельности типографии",
+      description: "Веб-приложение для типографии",
       alt: "Printer Icon",
     },
     {
       cardRef: card5,
       imgPath: profile_path,
       title: "Guraevskiy",
-      description: "You are already here!",
+      description: "Вы уже здесь!",
       alt: "Profile Icon",
     },
     {
       cardRef: card6,
       imgPath: more_path,
       title: "Другие",
-      description: 'Вы можете посмотреть другие работы на странице "РАБОТЫ"',
+      description: 'Вы можете посмотреть другие на странице "РАБОТЫ"',
       alt: "More Icon",
     },
   ];
 
   return (
-    <section id="Works">
-      <h1 className="font-sans_pro text-[5rem] pb-10">Работы</h1>
+    <section id="Works" className="pt-[15px]">
+      <h1 className="font-manrope text-[3rem] small:text-[4rem] pb-10 z-[3]">
+        Работы
+      </h1>
 
       <div
         id="cards"
@@ -113,8 +83,22 @@ function Section2() {
           }
         }}
       >
-        {data.map((e) => (
-          <>{getCard(e)}</>
+        {data.map((e, index) => (
+          <div className="card" ref={e.cardRef} key={index}>
+            <div className="card-content">
+              <div className="card-image">
+                <Image src={e.imgPath} alt={e.alt} className="card-image" />
+              </div>
+              <div className="card-info-wrapper">
+                <div className="card-info">
+                  <div className="card-info-title">
+                    <h3 className="font-manrope">{e.title}</h3>
+                    <h4 className="font-manrope">{e.description}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </section>

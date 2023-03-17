@@ -64,14 +64,20 @@ function Section3() {
     },
   ];
 
-  const DownHandle = (e: React.PointerEvent<HTMLDivElement>) => {
+  const DownHandle = (
+    e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     setMouseDownAt(e.clientX);
   };
-  const UpHandle = (e: React.PointerEvent<HTMLDivElement>) => {
+  const UpHandle = (
+    e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     setMouseDownAt(0);
     setPrevPercentage(percentage);
   };
-  const MoveHandle = (e: React.PointerEvent<HTMLDivElement>) => {
+  const MoveHandle = (
+    e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     if (mouseDownAt === 0) return;
     const mouseDelta = mouseDownAt - e.clientX;
     const maxDelta = window.innerWidth / 2;
@@ -85,6 +91,8 @@ function Section3() {
     track.current!.animate(
       {
         transform: `translate(${nextPercentage}%, 0%)`,
+        // problems with show more than 4-5 photos
+        // transform: `translate(${nextPercentage + 50}%, 0%)`,
       },
       { duration: 1200, fill: "forwards" }
     );
@@ -100,19 +108,25 @@ function Section3() {
 
   return (
     <section id="hobbies">
-      <h1 className="font-sans_pro text-[5rem] pb-10">Увлечения</h1>
+      <h1 className="font-manrope text-[3rem] small:text-[4rem] pb-10 z-[3]">
+        Увлечения
+      </h1>
       <div
         id="image-track"
         ref={track}
-        onPointerDown={(e) => {
+        onMouseDown={(e) => {
           DownHandle(e);
         }}
-        onPointerUp={(e) => {
+        onMouseUp={(e) => {
           UpHandle(e);
         }}
-        onPointerMove={(e) => {
+        onMouseMove={(e) => {
           MoveHandle(e);
         }}
+        // onMouseOut={(e) => UpHandle(e)}
+        onTouchStart={(e) => DownHandle(e.touches[0])}
+        onTouchEnd={(e) => UpHandle(e.touches[0])}
+        onTouchMove={(e) => MoveHandle(e.touches[0])}
       >
         {data.map((e, index) => (
           <Image

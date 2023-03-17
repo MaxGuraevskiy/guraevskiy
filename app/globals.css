@@ -17,7 +17,6 @@
 } */
 
 :root {
-  /* --background: #191919; */
   --background: rgb(20, 20, 20);
   --color: #ffffff;
   --card-color: rgb(23, 23, 23);
@@ -39,9 +38,10 @@ body {
   margin: 0;
 }
 
-body {
-  color: (var(--color));
-  background: (var(--background));
+body,
+main {
+  color: var(--color);
+  background-color: var(--background);
 }
 
 a {
@@ -60,11 +60,27 @@ button,
 span,
 p {
   color: var(--color);
-  font-size: 1.2rem;
+  font-size: 1.2vmin;
+}
+
+h1 {
+  font-size: 2vmin;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.8vmin;
+}
+
+h3 {
+  font-size: 1.6vmin;
+}
+
+h4 {
+  font-size: 1.4vmin;
+}
+
+h5 {
+  font-size: 1.2vmin;
 }
 
 header {
@@ -72,7 +88,7 @@ header {
   width: 100%;
   z-index: 10;
   box-shadow: 0 10px 100px rgb(0 0 0 / 10%);
-  background: (var(--background));
+  background: var(--background);
 }
 
 @keyframes rotate {
@@ -104,7 +120,7 @@ section {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 10rem);
+  min-height: calc(100vh - 10rem);
 }
 
 footer {
@@ -113,7 +129,7 @@ footer {
   flex-direction: column;
   z-index: 10;
   box-shadow: 0 10px 100px rgb(0 0 0 / 10%);
-  background: (var(--background));
+  background: var(--background);
 }
 
 /* Swipper */
@@ -141,11 +157,11 @@ footer {
 
 /* Set color scheme dark */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */
 
 @media only screen and (max-width: 75em) {
   html {
@@ -156,6 +172,10 @@ footer {
 @media only screen and (max-width: 56.25em) {
   html {
     font-size: 56%;
+  }
+
+  main {
+    padding-top: 63px;
   }
 }
 

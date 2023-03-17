@@ -16,10 +16,12 @@
   border-radius: 10px;
   cursor: pointer;
   display: flex;
-  height: 260px;
+  height: 220px;
+  width: 300px;
+  /* height: 20vmin;
+  width: 25vmin; */
   flex-direction: column;
   position: relative;
-  width: 300px;
 }
 
 .card:hover::before {
@@ -77,7 +79,6 @@ h3,
 h4,
 span {
   color: rgb(240, 240, 240);
-  font-family: "Rubik", sans-serif;
   font-weight: 400;
   margin: 0px;
 }
@@ -85,7 +86,8 @@ span {
 .card-image {
   align-items: center;
   display: flex;
-  height: 140px;
+  /* height: 140px; */
+  height: 15em;
   justify-content: center;
   overflow: hidden;
   opacity: 0.5;
@@ -143,7 +145,7 @@ span {
   }
 
   .card-image {
-    height: 80px;
+    height: 60px;
   }
 
   .card-info-wrapper {

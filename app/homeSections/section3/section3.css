@@ -1,16 +1,18 @@
 #image-track {
   display: flex;
   gap: 4vmin;
+  /* problems with show more than 4-5 photos */
   transform: translate(0%, 0%);
   user-select: none;
+  z-index: 3;
   /* -- Prevent image highlighting -- */
 }
 
 #image-track > .image {
-  /* width: 40vmin;
-  height: 56vmin; */
-  width: 40vmin;
-  height: 56vmin;
+  width: 200px;
+  height: 300px;
+  width: 30vmin;
+  height: 44vmin;
   object-fit: cover;
   object-position: 100% center;
 }

@@ -42,7 +42,7 @@ function Header() {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
   return (
-    <header className="bg-darkBg">
+    <header className="">
       <nav className={classNames(styles.content, "small:!px-20 small:!py-4")}>
         {/* Logo and Name */}
         <Link href={"/"} className={styles.logo_container}>

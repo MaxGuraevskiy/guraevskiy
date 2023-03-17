@@ -21,34 +21,38 @@ import vscode_logo from "@/public/techStack/vscode_logo.svg";
 
 import "./section1.css";
 
-type techStackImage = { src: any; alt: string; className: string };
+type techStackImage = { src: any; alt: string; className?: string };
 const techStackImages: techStackImage[] = [
-  { src: typescript_logo, alt: "TypeScript Logo", className: "w-28 h-28" },
-  { src: js_logo, alt: "JavaScript Logo", className: "w-28 h-28" },
-  { src: nextjs_logo, alt: "Next JS Logo", className: "w-28 h-28" },
-  { src: gatsby_logo, alt: "Gatsby Logo", className: "w-28 h-28" },
-  { src: expo_logo, alt: "Expo Logo", className: "w-28 h-28" },
-  { src: tailwind_logo, alt: "Tailwind Logo", className: "w-28 h-28" },
+  { src: typescript_logo, alt: "TypeScript Logo", className: "" },
+  { src: js_logo, alt: "JavaScript Logo", className: "" },
+  { src: nextjs_logo, alt: "Next JS Logo", className: "" },
+  { src: gatsby_logo, alt: "Gatsby Logo", className: "" },
+  { src: expo_logo, alt: "Expo Logo", className: "" },
+  { src: tailwind_logo, alt: "Tailwind Logo", className: "" },
   {
     src: react_logo,
     alt: "React Logo",
-    className: "w-28 h-28 hidden mobile:block",
+    className: "hidden mobile:block",
   },
   {
     src: vscode_logo,
     alt: "Visual Studio Code logo",
-    className: "w-28 h-28 hidden mobile:block",
+    className: "hidden mobile:block",
   },
   {
     src: git_logo,
     alt: "GIT logo",
-    className: "w-28 h-28 hidden mobile:block",
+    className: "hidden mobile:block",
   },
 ];
-const GetTechStackImages = ({ src, alt, className }: techStackImage) => {
+const GetTechStackImages = ({ src, alt }: techStackImage) => {
   return (
     <div>
-      <Image src={src} alt={alt} className={className} />
+      <Image
+        src={src}
+        alt={alt}
+        className={`min-w-[8em] min-h-[8em] w-[8vmin] h-[8vmin]`}
+      />
     </div>
   );
 };
@@ -59,15 +63,22 @@ function Section1() {
       <Blob />
       <div className={classNames("glass space-y-5")}>
         <div className="flex flex-col items-center">
-          <Image
+          {/* <Image
             src={me_main_path}
             alt=""
             className="rounded-full w-60 h-60 verysmallscreen:w-80 verysmallscreen:h-80 small:w-96 small:h-96 medium:w-[36rem] medium:h-[36rem]"
             style={{ objectFit: "cover" }}
+          /> */}
+
+          <Image
+            src={me_main_path}
+            alt=""
+            className="rounded-full min-w-[30em] min-h-[30em] w-[40vmin] h-[40vmin]"
+            style={{ objectFit: "cover" }}
           />
 
-          <h1 className="font-sans_pro font-bold text-[4rem] ">
-            Привет, это я,<br></br>Максим Гураевский
+          <h1 className="font-manrope font-bold text-[3rem] small:text-[4rem] ">
+            Максим Гураевский
           </h1>
 
           <div
@@ -80,11 +91,14 @@ function Section1() {
         </div>
 
         <div className="flex flex-col items-center">
-          <h2 className="font-sans_pro font-bold text-[4rem] ">Стек</h2>
+          <h2 className="font-manrope font-bold text-[3rem] ">Стек</h2>
           <div className="flex flex-wrap justify-around px-4 gap-x-10 gap-y-5">
             {techStackImages.map(({ src, alt, className }, i) => (
-              <li key={`techStackImage${i}`} className="list-none">
-                <GetTechStackImages src={src} alt={alt} className={className} />
+              <li
+                key={`techStackImage${i}`}
+                className={`${className} list-none`}
+              >
+                <GetTechStackImages src={src} alt={alt} />
               </li>
             ))}
           </div>
