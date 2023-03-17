@@ -51,9 +51,9 @@ export default function RootLayout({
           <div className=""></div>
           <Suspense fallback={<HomeLoading />}>{children}</Suspense>
           <Footer />
+          <Analytics />
         </body>
       </html>
-      <Analytics />
     </>
   );
 }
