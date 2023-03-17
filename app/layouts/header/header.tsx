@@ -105,12 +105,11 @@ function Header() {
             onClick={() => {
               setIsBurgerOpen(true);
             }}
-            className="w-12 h-12 "
           >
             <Image
               src={burgerMenu_path}
               alt="burger menu icon"
-              className="w-full h-full"
+              className="w-12 h-12"
             />
           </button>
         </div>
