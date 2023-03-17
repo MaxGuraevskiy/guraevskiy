@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Source_Sans_Pro, Manrope } from "next/font/google";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import Footer from "./layouts/footer/footer";
 import Header from "./layouts/header/header";
@@ -42,16 +43,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={`${sans_pro.variable} ${manrope.variable}`}>
-      <body className="">
-        {/* <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y"> */}
-        <Header />
-        <div className="">
-          
-        </div>
-        <Suspense fallback={<HomeLoading />}>{children}</Suspense>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <html lang="ru" className={`${sans_pro.variable} ${manrope.variable}`}>
+        <body className="">
+          {/* <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y"> */}
+          <Header />
+          <div className=""></div>
+          <Suspense fallback={<HomeLoading />}>{children}</Suspense>
+          <Footer />
+        </body>
+      </html>
+      <Analytics />
+    </>
   );
 }
