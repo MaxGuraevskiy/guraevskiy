@@ -1,3 +1,10 @@
+@media (prefers-reduced-motion) {
+  #wrapper {
+    animation: none;
+    display: none;
+  }
+}
+
 #wrapper {
   aspect-ratio: 1.618;
   width: 70vmin;

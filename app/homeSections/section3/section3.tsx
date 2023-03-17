@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import keyboard from "@/public/imageCarousel/keyboard.jpg";
@@ -13,10 +13,11 @@ import keyboard_with_kitten from "@/public/imageCarousel/keyboard_with_kitten.jp
 import "./section3.css";
 
 function Section3() {
-  const track = useRef<HTMLDivElement>(null);
-  const [mouseDownAt, setMouseDownAt] = useState(0);
-  const [prevPercentage, setPrevPercentage] = useState(0);
-  const [percentage, setPercentage] = useState(0);
+  // const track = useRef<HTMLDivElement>(null);
+  // const [mouseDownAt, setMouseDownAt] = useState(0);
+  // const [prevPercentage, setPrevPercentage] = useState(0);
+  // // const [percentage, setPercentage] = useState(0);
+  // let percentage = 0;
 
   const image1 = useRef<HTMLImageElement>(null);
   const image2 = useRef<HTMLImageElement>(null);
@@ -64,54 +65,116 @@ function Section3() {
     },
   ];
 
-  const DownHandle = (
-    e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    setMouseDownAt(e.clientX);
-  };
-  const UpHandle = (
-    e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    setMouseDownAt(0);
-    setPrevPercentage(percentage);
-  };
-  const MoveHandle = (
-    e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    if (mouseDownAt === 0) return;
-    const mouseDelta = mouseDownAt - e.clientX;
-    const maxDelta = window.innerWidth / 2;
-    const percentage = (mouseDelta / maxDelta) * -100;
-    const nextPercentageUnconstrained = prevPercentage + percentage;
-    const nextPercentage = Math.max(
-      Math.min(nextPercentageUnconstrained, 0),
-      -100
-    );
-    setPercentage(nextPercentage);
-    track.current!.animate(
-      {
-        transform: `translate(${nextPercentage}%, 0%)`,
-        // problems with show more than 4-5 photos
-        // transform: `translate(${nextPercentage + 50}%, 0%)`,
-      },
-      { duration: 1200, fill: "forwards" }
-    );
-    for (const image of data.map((e) => e.imgRef.current)) {
-      image?.animate(
-        {
-          objectPosition: `${100 + nextPercentage}% center`,
-        },
-        { duration: 1200, fill: "forwards" }
-      );
-    }
-  };
+  // const DownHandle = (
+  //   e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
+  // ) => {
+  //   setMouseDownAt(e.clientX);
+  // };
+  // const UpHandle = (
+  //   e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
+  // ) => {
+  //   setMouseDownAt(0);
+  //   setPrevPercentage(percentage);
+  // };
+  // const MoveHandle = (
+  //   e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
+  // ) => {
+  //   if (mouseDownAt === 0) return;
+  //   const mouseDelta = mouseDownAt - e.clientX;
+  //   const maxDelta = window.innerWidth / 2;
+  //   const percentage2 = (mouseDelta / maxDelta) * -100;
+  //   const nextPercentageUnconstrained = prevPercentage + percentage2;
+  //   const nextPercentage = Math.max(
+  //     Math.min(nextPercentageUnconstrained, 0),
+  //     -100
+  //   );
+  //   percentage = nextPercentage;
+  //   track.current!.animate(
+  //     {
+  //       transform: `translate(${nextPercentage}%, 0%)`,
+  //       // problems with show more than 4-5 photos
+  //       // transform: `translate(${nextPercentage + 50}%, 0%)`,
+  //     },
+  //     { duration: 1200, fill: "forwards" }
+  //   );
+  //   for (const image of data.map((e) => e.imgRef.current)) {
+  //     image?.animate(
+  //       {
+  //         objectPosition: `${100 + nextPercentage}% center`,
+  //       },
+  //       { duration: 1200, fill: "forwards" }
+  //     );
+  //   }
+  // };
+
+  useEffect(() => {
+    const track = document.getElementById("image-track");
+
+    const handleOnDown = (e: MouseEvent | Touch) => {
+      if (track) track.dataset.mouseDownAt = String(e.clientX);
+    };
+
+    const handleOnUp = () => {
+      if (track) {
+        track.dataset.mouseDownAt = "0";
+        track.dataset.prevPercentage = track.dataset.percentage;
+      }
+    };
+
+    const handleOnMove = (e: MouseEvent | Touch) => {
+      if (track) {
+        if (track.dataset.mouseDownAt === "0") return;
+
+        const mouseDelta = parseFloat(track.dataset.mouseDownAt!) - e.clientX,
+          maxDelta = window.innerWidth / 2;
+
+        const percentage = (mouseDelta / maxDelta) * -100,
+          nextPercentageUnconstrained =
+            parseFloat(track.dataset.prevPercentage!) + percentage,
+          nextPercentage = Math.max(
+            Math.min(nextPercentageUnconstrained, 0),
+            -100
+          );
+
+        track.dataset.percentage = String(nextPercentage);
+
+        track.animate(
+          {
+            transform: `translate(${2 * nextPercentage}%, 0%)`,
+          },
+          { duration: 1200, fill: "forwards" }
+        );
+
+        for (const image of track.getElementsByClassName("image")) {
+          image.animate(
+            {
+              objectPosition: `${100 + nextPercentage}% center`,
+            },
+            { duration: 1200, fill: "forwards" }
+          );
+        }
+      }
+    };
+
+    window.onmousedown = (e) => handleOnDown(e);
+
+    window.ontouchstart = (e) => handleOnDown(e.touches[0]);
+
+    window.onmouseup = (e) => handleOnUp();
+
+    window.ontouchend = (e) => handleOnUp();
+
+    window.onmousemove = (e) => handleOnMove(e);
+
+    window.ontouchmove = (e) => handleOnMove(e.touches[0]);
+  }, []);
 
   return (
     <section id="hobbies">
       <h1 className="font-manrope text-[3rem] small:text-[4rem] pb-10 z-[3]">
         Увлечения
       </h1>
-      <div
+      {/* <div
         id="image-track"
         ref={track}
         onMouseDown={(e) => {
@@ -127,7 +190,8 @@ function Section3() {
         onTouchStart={(e) => DownHandle(e.touches[0])}
         onTouchEnd={(e) => UpHandle(e.touches[0])}
         onTouchMove={(e) => MoveHandle(e.touches[0])}
-      >
+      > */}
+      <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
         {data.map((e, index) => (
           <Image
             key={index}
