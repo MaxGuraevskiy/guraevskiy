@@ -63,13 +63,6 @@ function Section1() {
       <Blob />
       <div className={classNames("glass space-y-5")}>
         <div className="flex flex-col items-center">
-          {/* <Image
-            src={me_main_path}
-            alt=""
-            className="rounded-full w-60 h-60 verysmallscreen:w-80 verysmallscreen:h-80 small:w-96 small:h-96 medium:w-[36rem] medium:h-[36rem]"
-            style={{ objectFit: "cover" }}
-          /> */}
-
           <Image
             src={me_main_path}
             alt=""

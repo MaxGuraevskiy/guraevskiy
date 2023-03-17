@@ -1,7 +1,55 @@
 "use client";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 
 import "./footer.css";
+
+const nav = [
+  {
+    href: "/",
+    title: "Начальная",
+  },
+  {
+    href: "/experience",
+    title: "Работы",
+  },
+  {
+    href: "/about",
+    title: "Обо мне",
+  },
+];
+
+const links = [
+  {
+    href: "https://t.me/guraevskiy",
+    title: "Telegram",
+  },
+  {
+    href: "https://github.com/MaxGuraevskiy",
+    title: "GitHub",
+  },
+  {
+    href: "https://linkedin.com",
+    title: "LinkedIn",
+  },
+];
+
+const GetLinks = (links: { href: string; title: string }[], title: string) => {
+  return (
+    <div className="footer-section">
+      <h1 className="font-manrope">{title}</h1>
+      <div className="footer-section-links">{links.map((e) => GetLink(e))}</div>
+    </div>
+  );
+};
+
+const GetLink = ({ href, title }: { href: string; title: string }) => {
+  return (
+    <Link href={href} target="_blank" key={title}>
+      <h2 className="font-sans_pro">{title}</h2>
+    </Link>
+  );
+};
 
 function Footer() {
   const wrapper = useRef<HTMLDivElement>(null);
@@ -22,55 +70,13 @@ function Footer() {
   }, []);
 
   return (
-    <>
-      <footer id="footer">
-        <div id="bubble-wrapper" ref={wrapper}></div>
-        <div id="footer-content">
-          <div className="footer-section">
-            <h3 className="footer-section-title">General</h3>
-            <div className="footer-section-links">
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                Directory
-              </a>
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                About
-              </a>
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                Contact Us
-              </a>
-            </div>
-          </div>
-          <div className="footer-section">
-            <h3 className="footer-section-title">Social</h3>
-            <div className="footer-section-links">
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                Twitter
-              </a>
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                CodePen
-              </a>
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                YouTube
-              </a>
-            </div>
-          </div>
-          <div className="footer-section">
-            <h3 className="footer-section-title">Legal</h3>
-            <div className="footer-section-links">
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                Privacy
-              </a>
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                Terms
-              </a>
-              <a href="https://www.youtube.com/c/Hyperplexed" target="_blank">
-                Cookies
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </>
+    <footer id="footer">
+      <div id="bubble-wrapper" ref={wrapper}></div>
+      <div id="footer-content">
+        {GetLinks(nav, "Навигация")}
+        {GetLinks(links, "Ссылки")}
+      </div>
+    </footer>
   );
 }
 

@@ -264,9 +264,6 @@
   resize: none;
   font-size: 2rem;
   background-color: transparent;
-  border-width: 1px;
-  border-radius: 5px;
-  border-color: "#a3a3a3";
   z-index: 3;
   padding: 10px;
 }

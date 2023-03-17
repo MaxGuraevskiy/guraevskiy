@@ -21,13 +21,13 @@
 }
 
 .bubble {
-  height: max(300px, 30vw);
-  width: max(300px, 30vw);
+  height: 20vmin;
+  width: 20vmin;
 
   background-color: rgb(33, 150, 243);
   border-radius: 100%;
 
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 100%;
 
@@ -42,13 +42,6 @@
 }
 
 /* -- Footer styles -- */
-
-h3,
-a {
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
-  margin: 0px;
-}
 
 #footer {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
@@ -70,21 +63,11 @@ a {
   gap: 1rem;
 }
 
-.footer-section-title {
-  color: white;
-  font-size: 1.5rem;
-}
-
 .footer-section-links {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 160px;
-}
-
-.footer-section-links > a {
-  color: white;
-  text-decoration: none;
 }
 
 .footer-section-links > a:hover {

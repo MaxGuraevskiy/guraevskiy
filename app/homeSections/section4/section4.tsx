@@ -66,17 +66,7 @@ function Section4() {
   }, []);
 
   return (
-    <section id="">
-      <div id="wrapper" ref={wrapper} data-configuration="1" data-roundness="1">
-        <div className="shape"></div>
-        <div className="shape"></div>
-        <div className="shape"></div>
-        <div className="shape"></div>
-        <div className="shape"></div>
-        <div className="shape"></div>
-        <div className="shape"></div>
-      </div>
-
+    <section id="Feedback">
       <h2 className="font-sans_pro text-[2.5rem] pt-[15px] z-[3]">
         Вы можете мне оставить сообщение
       </h2>
@@ -94,6 +84,16 @@ function Section4() {
           <h3 className="font-sans_pro text-[2rem] z-[3]">Отправить</h3>
         </button>
       </form>
+
+      <div id="wrapper" ref={wrapper} data-configuration="1" data-roundness="1">
+        <div className="shape"></div>
+        <div className="shape"></div>
+        <div className="shape"></div>
+        <div className="shape"></div>
+        <div className="shape"></div>
+        <div className="shape"></div>
+        <div className="shape"></div>
+      </div>
     </section>
   );
 }

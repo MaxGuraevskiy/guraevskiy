@@ -17,6 +17,7 @@ function Section3() {
   const [mouseDownAt, setMouseDownAt] = useState(0);
   const [prevPercentage, setPrevPercentage] = useState(0);
   const [percentage, setPercentage] = useState(0);
+  const [nextPercentage, setNextPercentage] = useState(0);
 
   const image1 = useRef<HTMLImageElement>(null);
   const image2 = useRef<HTMLImageElement>(null);
@@ -38,9 +39,9 @@ function Section3() {
       alt: "Photo of my maverick 1000R XMR",
     },
     {
-      imgRef: image3,
-      imgPath: gym_deadlift,
-      alt: "Light weights",
+      imgRef: image7,
+      imgPath: gym,
+      alt: "Me on the gym",
     },
     {
       imgRef: image4,
@@ -58,9 +59,9 @@ function Section3() {
       alt: "Me checking father`s drill machine",
     },
     {
-      imgRef: image7,
-      imgPath: gym,
-      alt: "Me on the gym",
+      imgRef: image3,
+      imgPath: gym_deadlift,
+      alt: "Light weights",
     },
   ];
 
@@ -71,6 +72,7 @@ function Section3() {
     setMouseDownAt(0);
     setPrevPercentage(percentage);
   };
+
   const MoveHandle = (e: React.PointerEvent<HTMLElement>) => {
     if (mouseDownAt === 0) return;
     const mouseDelta = mouseDownAt - e.clientX;
@@ -82,7 +84,10 @@ function Section3() {
       -100
     );
     setPercentage(nextPercentage);
+    SwipeAnimation(nextPercentage);
+  };
 
+  const SwipeAnimation = (nextPercentage: number) => {
     const children = data.map((e) => e.imgRef.current);
     // const count = children.length;
     // const widths = children.map((e) => e?.clientWidth);
@@ -102,25 +107,27 @@ function Section3() {
         { duration: 1200, fill: "forwards" }
       );
     }
+    setNextPercentage(nextPercentage);
   };
 
   return (
-    <section
-      id="hobbies"
-      onPointerDown={(e) => {
-        DownHandle(e);
-      }}
-      onPointerUp={(e) => {
-        UpHandle(e);
-      }}
-      onPointerMove={(e) => {
-        MoveHandle(e);
-      }}
-    >
+    <section id="hobbies">
       <h1 className="font-manrope text-[3rem] small:text-[4rem] pb-10 z-[3]">
         Увлечения
       </h1>
-      <div id="image-track" ref={track}>
+      <div
+        id="image-track"
+        ref={track}
+        onPointerDown={(e) => {
+          DownHandle(e);
+        }}
+        onPointerUp={(e) => {
+          UpHandle(e);
+        }}
+        onPointerMove={(e) => {
+          MoveHandle(e);
+        }}
+      >
         {data.map((e, index) => (
           <Image
             key={index}
@@ -132,6 +139,16 @@ function Section3() {
           />
         ))}
       </div>
+
+      <input
+        id="rangeSwiper"
+        type={"range"}
+        min={-100}
+        max={0}
+        value={nextPercentage}
+        onChange={(x) => SwipeAnimation(parseFloat(x.target.value))}
+        step="any"
+      />
     </section>
   );
 }

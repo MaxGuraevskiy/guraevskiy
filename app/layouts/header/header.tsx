@@ -32,7 +32,7 @@ function Header() {
             setIsBurgerOpen(false);
           }}
         >
-          {label}
+          <h3>{label}</h3>
         </Link>
       </div>
     );
@@ -61,14 +61,14 @@ function Header() {
             />
           </div>
           {/* Name */}
-          <h2
+          <h1
             className={classNames(
               styles.logo_sub,
               "font-sans_pro font-bold hover:text-[#8e57f7]"
             )}
           >
             Guraevskiy
-          </h2>
+          </h1>
         </Link>
 
         {/* Navigation links (only desktop) */}
@@ -90,14 +90,14 @@ function Header() {
             rel="noopener noreferrer"
             className="hover:animate-pulse hidden verysmallscreen:!flex"
           >
-            <p
+            <h3
               className={classNames(
                 styles.link,
                 "font-sans_pro hover:text-[#8e57f7]"
               )}
             >
               Резюме
-            </p>
+            </h3>
           </a>
 
           {/* Burger Menu */}
@@ -105,7 +105,7 @@ function Header() {
             onClick={() => {
               setIsBurgerOpen(true);
             }}
-            className="w-8 h-8 "
+            className="w-12 h-12 "
           >
             <Image
               src={burgerMenu_path}
@@ -125,7 +125,7 @@ function Header() {
           onClick={() => {
             setIsBurgerOpen(false);
           }}
-          className="fixed right-4 top-4"
+          className="fixed right-16 top-16"
         >
           <Image src={menu_close_path} alt="close modal search" />
         </button>
@@ -144,27 +144,32 @@ function Header() {
           rel="noopener noreferrer"
           className="hover:animate-pulse"
         >
-          <p
+          <h3
             className={classNames(
               styles.link,
               "font-sans_pro hover:text-[#8e57f7]"
             )}
           >
             Резюме
-          </p>
+          </h3>
         </a>
 
         <div className="flex flex-col">
-          <h2 className="font-manrope text-[2rem] font-semibold">Ссылки</h2>
           <div className="flex flex-col mobile:flex-row justify-center items-center space-y-10 mobile:space-x-10 mobile:space-y-0">
             <Link href="https://t.me/guraevskiy">
-              <p className="font-manrope text-[1.8rem] font-normal">Telegram</p>
+              <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
+                Telegram
+              </h2>
             </Link>
-            <Link href="https://t.me/guraevskiy">
-              <p className="font-manrope text-[1.8rem] font-normal">Telegram</p>
+            <Link href="https://github.com/MaxGuraevskiy">
+              <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
+                GitHub
+              </h2>
             </Link>
-            <Link href="https://t.me/guraevskiy">
-              <p className="font-manrope text-[1.8rem] font-normal">Telegram</p>
+            <Link href="https://linkedin.com">
+              <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
+                LinkedIn
+              </h2>
             </Link>
           </div>
         </div>
