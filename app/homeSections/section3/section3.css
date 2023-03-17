@@ -1,7 +1,8 @@
 #image-track {
   display: flex;
   gap: 4vmin;
-  /* problems with show more than 4-5 photos */
+  position: relative;
+  left: 50%;
   transform: translate(0%, 0%);
   user-select: none;
   z-index: 3;
@@ -9,8 +10,6 @@
 }
 
 #image-track > .image {
-  width: 200px;
-  height: 300px;
   width: 30vmin;
   height: 44vmin;
   object-fit: cover;
