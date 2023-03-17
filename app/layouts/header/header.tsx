@@ -23,16 +23,15 @@ function Header() {
     return (
       <div>
         <Link
-          className={classNames(
-            styles.link,
-            "font-sans_pro text-[#f9f9f9] hover:text-[#8e57f7]"
-          )}
+          className={classNames(styles.link)}
           href={href}
           onClick={() => {
             setIsBurgerOpen(false);
           }}
         >
-          <h3>{label}</h3>
+          <h3 className="font-sans_pro text-[#f9f9f9] hover:text-[#8e57f7]">
+            {label}
+          </h3>
         </Link>
       </div>
     );
@@ -137,7 +136,7 @@ function Header() {
           ))}
         </ul>
 
-        <a
+        <Link
           href="download/guraevskiymaxim.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -151,7 +150,7 @@ function Header() {
           >
             Резюме
           </h3>
-        </a>
+        </Link>
 
         <div className="flex flex-col">
           <div className="flex flex-col mobile:flex-row justify-center items-center space-y-10 mobile:space-x-10 mobile:space-y-0">

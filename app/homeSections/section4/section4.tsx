@@ -71,7 +71,7 @@ function Section4() {
         Вы можете мне оставить сообщение
       </h2>
       <form ref={form} onSubmit={sendEmail} className="z-[3]">
-        <div className="loading-indicator" id="loading-indicator__2">
+        <div className="" id="loading-indicator">
           <textarea
             id="textbox"
             value={textValue}
