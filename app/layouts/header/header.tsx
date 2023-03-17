@@ -29,7 +29,7 @@ function Header() {
             setIsBurgerOpen(false);
           }}
         >
-          <h3 className="font-sans_pro text-[#f9f9f9] hover:text-[#8e57f7]">
+          <h3 className="font-sans_pro text-[1.6rem] text-[#f9f9f9] hover:text-[#8e57f7]">
             {label}
           </h3>
         </Link>

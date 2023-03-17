@@ -27,8 +27,8 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Max Guraevskiy",
   description: "Max Guraevskiy. My portfolio",
-  keywords: ["Next.js", "React", "JavaScript"],
-  authors: [{ name: "Max", url: "https://nextjs.org" }],
+  keywords: ["Guraevskiy", "Max Guraevskiy", "Next.js", "React", "JavaScript"],
+  authors: [{ name: "Max Guraevskiy", url: "https://guraevskiy.vercel.app/" }],
   creator: "Maxim Guraevskiy",
   // themeColor: [
   //   { media: "(prefers-color-scheme: light)", color: "white" },

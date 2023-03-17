@@ -1,9 +1,9 @@
-@media (prefers-reduced-motion) {
+/* @media (prefers-reduced-motion) {
   #wrapper {
     animation: none;
     display: none;
   }
-}
+} */
 
 #wrapper {
   aspect-ratio: 1.618;
@@ -247,6 +247,9 @@
 
 #loading-indicator {
   border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -khtml-border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
   margin: 20px auto;
   overflow: hidden;

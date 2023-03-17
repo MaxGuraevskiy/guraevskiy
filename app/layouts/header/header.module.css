@@ -40,9 +40,8 @@
 
 .link {
   padding: 2.2rem 1rem;
-  display: inline-block;
+  display: block;
   font-size: 1.6rem;
-  /* color: #333; */
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;

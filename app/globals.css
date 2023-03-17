@@ -197,8 +197,9 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-a, label{
-	-webkit-tap-highlight-color: transparent;
+a,
+label {
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media only screen and (max-width: 75em) {
