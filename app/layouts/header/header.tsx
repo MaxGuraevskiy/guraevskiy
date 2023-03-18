@@ -100,8 +100,11 @@ function Header() {
           </a>
 
           {/* Burger Menu */}
-          <button
-            onClick={() => {
+          <div
+            // onClick={() => {
+            //   setIsBurgerOpen(true);
+            // }}
+            onPointerDown={() => {
               setIsBurgerOpen(true);
             }}
           >
@@ -110,7 +113,7 @@ function Header() {
               alt="burger menu icon"
               className="w-12 h-12"
             />
-          </button>
+          </div>
         </div>
       </nav>
       {/* Modal window */}
