@@ -101,12 +101,12 @@ function Header() {
 
           {/* Burger Menu */}
           <div
-            // onClick={() => {
-            //   setIsBurgerOpen(true);
-            // }}
-            onPointerDown={() => {
+            onClick={() => {
               setIsBurgerOpen(true);
             }}
+            // onPointerUp={() => {
+            //   setIsBurgerOpen(true);
+            // }}
           >
             <Image
               src={burgerMenu_path}
