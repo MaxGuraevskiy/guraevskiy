@@ -100,20 +100,15 @@ function Header() {
           </a>
 
           {/* Burger Menu */}
-          <div
+
+          <Image
             onClick={() => {
               setIsBurgerOpen(true);
             }}
-            // onPointerUp={() => {
-            //   setIsBurgerOpen(true);
-            // }}
-          >
-            <Image
-              src={burgerMenu_path}
-              alt="burger menu icon"
-              className="w-12 h-12"
-            />
-          </div>
+            src={burgerMenu_path}
+            alt="burger menu icon"
+            className="w-12 h-12"
+          />
         </div>
       </nav>
       {/* Modal window */}
