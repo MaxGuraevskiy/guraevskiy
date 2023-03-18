@@ -88,8 +88,8 @@ function Section2() {
         }}
       >
         {data.map((e, index) => (
-          <Link href={"/experience"}>
-            <div className="card" ref={e.cardRef} key={index}>
+          <Link href={"/experience"} key={`${e.title}${index}`}>
+            <div className="card" ref={e.cardRef}>
               <div className="card-content">
                 <div className="card-image">
                   <Image src={e.imgPath} alt={e.alt} className="card-image" />
