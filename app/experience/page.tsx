@@ -3,11 +3,11 @@ import { StaticImageData } from "next/image";
 
 import WorkSkeleton from "./workSkeleton";
 
-import Legion_path from "@/public/works/legion.png";
-import FlyBoots_path from "@/public/works/flyboots.png";
-import CheckPoint_path from "@/public/works/checkpoint.png";
-import Typography_path from "@/public/works/typography.png";
-import Guraevskiy_path from "@/public/works/guraevskiy.png";
+import Legion_path from "@/public/experience/legion.png";
+import FlyBoots_path from "@/public/experience/flyboots.png";
+import CheckPoint_path from "@/public/experience/checkpoint.png";
+import Typography_path from "@/public/experience/typography.png";
+import Guraevskiy_path from "@/public/experience/guraevskiy.png";
 
 import "./page.css";
 
