@@ -102,12 +102,10 @@ function Header() {
           {/* Burger Menu */}
 
           <Image
-            onClick={() => {
-              setIsBurgerOpen(true);
-            }}
+            onClick={() => setIsBurgerOpen(true)}
             src={burgerMenu_path}
             alt="burger menu icon"
-            className="w-12 h-12"
+            className="w-12 h-12 hover:cursor-pointer"
           />
         </div>
       </nav>
