@@ -96,6 +96,15 @@ function Section3() {
         transform: `translate(${
           (nextPercentage / 100) * children.length * 34
         }vmin, 0%)`,
+        webkittransform: `translate(${
+          (nextPercentage / 100) * children.length * 34
+        }vmin, 0%)`,
+        moztransform: `translate(${
+          (nextPercentage / 100) * children.length * 34
+        }vmin, 0%)`,
+        otransform: `translate(${
+          (nextPercentage / 100) * children.length * 34
+        }vmin, 0%)`,
       },
       { duration: 1200, fill: "forwards" }
     );
@@ -103,6 +112,9 @@ function Section3() {
       image?.animate(
         {
           objectPosition: `${100 + nextPercentage}% center`,
+          webkitobjectPosition: `${100 + nextPercentage}% center`,
+          mozobjectPosition: `${100 + nextPercentage}% center`,
+          oobjectPosition: `${100 + nextPercentage}% center`,
         },
         { duration: 1200, fill: "forwards" }
       );
