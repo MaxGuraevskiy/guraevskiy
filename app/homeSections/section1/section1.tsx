@@ -28,7 +28,11 @@ const techStackImages: techStackImage[] = [
   { src: nextjs_logo, alt: "Next JS Logo", className: "" },
   { src: gatsby_logo, alt: "Gatsby Logo", className: "" },
   { src: expo_logo, alt: "Expo Logo", className: "" },
-  { src: tailwind_logo, alt: "Tailwind Logo", className: "" },
+  {
+    src: tailwind_logo,
+    alt: "Tailwind Logo",
+    className: "hidden mobile:block",
+  },
   {
     src: react_logo,
     alt: "React Logo",

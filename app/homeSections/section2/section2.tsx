@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import sneaker_path from "@/public/section2/sneaker.svg";
@@ -10,6 +11,7 @@ import profile_path from "@/public/section2/profile.svg";
 import more_path from "@/public/section2/more.svg";
 
 import "./section2.css";
+import Link from "next/link";
 
 function Section2() {
   const card1 = useRef<HTMLDivElement>(null),
@@ -64,6 +66,8 @@ function Section2() {
     },
   ];
 
+  const router = useRouter();
+
   return (
     <section id="Works" className="pt-[15px]">
       <h1 className="font-manrope text-[3rem] small:text-[4rem] pb-10 z-[3]">
@@ -84,21 +88,23 @@ function Section2() {
         }}
       >
         {data.map((e, index) => (
-          <div className="card" ref={e.cardRef} key={index}>
-            <div className="card-content">
-              <div className="card-image">
-                <Image src={e.imgPath} alt={e.alt} className="card-image" />
-              </div>
-              <div className="card-info-wrapper">
-                <div className="card-info">
-                  <div className="card-info-title">
-                    <h3 className="font-manrope">{e.title}</h3>
-                    <h4 className="font-manrope">{e.description}</h4>
+          <Link href={"/experience"}>
+            <div className="card" ref={e.cardRef} key={index}>
+              <div className="card-content">
+                <div className="card-image">
+                  <Image src={e.imgPath} alt={e.alt} className="card-image" />
+                </div>
+                <div className="card-info-wrapper">
+                  <div className="card-info">
+                    <div className="card-info-title">
+                      <h3 className="font-manrope">{e.title}</h3>
+                      <h4 className="font-manrope">{e.description}</h4>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

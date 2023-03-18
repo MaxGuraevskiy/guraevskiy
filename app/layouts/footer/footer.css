@@ -63,11 +63,19 @@
   gap: 1rem;
 }
 
+.footer-section-title {
+  font-size: 2rem;
+}
+
 .footer-section-links {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 160px;
+  width: 100px;
+}
+
+.footer-section-link {
+  font-size: 2rem;
 }
 
 .footer-section-links > a:hover {
@@ -103,10 +111,14 @@
   }
 
   .footer-section-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
-  .footer-section-links > a {
-    font-size: 0.8rem;
+  .footer-section-links {
+    width: 100px;
+  }
+
+  .footer-section-link {
+    font-size: 1.5rem;
   }
 }

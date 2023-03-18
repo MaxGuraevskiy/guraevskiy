@@ -58,11 +58,11 @@ function Section3() {
       imgPath: building,
       alt: "Me checking father`s drill machine",
     },
-    {
-      imgRef: image3,
-      imgPath: gym_deadlift,
-      alt: "Light weights",
-    },
+    // {
+    //   imgRef: image3,
+    //   imgPath: gym_deadlift,
+    //   alt: "Light weights",
+    // },
   ];
 
   const DownHandle = (e: React.PointerEvent<HTMLElement>) => {

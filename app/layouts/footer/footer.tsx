@@ -37,16 +37,22 @@ const links = [
 const GetLinks = (links: { href: string; title: string }[], title: string) => {
   return (
     <div className="footer-section">
-      <h1 className="font-manrope">{title}</h1>
-      <div className="footer-section-links">{links.map((e) => GetLink(e))}</div>
+      <h1 className="footer-section-title font-manrope">{title}</h1>
+      <div className="footer-section-links">
+        {links.map((e, index) => (
+          <li key={`${e.title}${index}`} className="list-none">
+            {GetLink(e)}
+          </li>
+        ))}
+      </div>
     </div>
   );
 };
 
 const GetLink = ({ href, title }: { href: string; title: string }) => {
   return (
-    <Link href={href} target="_blank" key={title}>
-      <h2 className="font-sans_pro">{title}</h2>
+    <Link href={href} key={title}>
+      <h2 className="footer-section-link font-sans_pro">{title}</h2>
     </Link>
   );
 };
