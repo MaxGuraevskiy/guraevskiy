@@ -100,13 +100,18 @@ function Header() {
           </a>
 
           {/* Burger Menu */}
-
-          <Image
-            onPointerUp={() => setIsBurgerOpen(true)}
-            src={burgerMenu_path}
-            alt="burger menu icon"
-            className="w-12 h-12 hover:cursor-pointer"
-          />
+          {/* <button onClick={() => setIsBurgerOpen(true)}></button> */}
+          <input
+            type={"checkbox"}
+            value={String(isBurgerOpen)}
+            onChange={() => setIsBurgerOpen(true)}
+          >
+            <Image
+              src={burgerMenu_path}
+              alt="burger menu icon"
+              className="w-12 h-12 hover:cursor-pointer"
+            />
+          </input>
         </div>
       </nav>
       {/* Modal window */}
