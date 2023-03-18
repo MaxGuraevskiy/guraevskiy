@@ -1,6 +1,5 @@
 "use client";
 import React, { useRef } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 import sneaker_path from "@/public/section2/sneaker.svg";
@@ -65,8 +64,6 @@ function Section2() {
       alt: "More Icon",
     },
   ];
-
-  const router = useRouter();
 
   return (
     <section id="Works" className="pt-[15px]">

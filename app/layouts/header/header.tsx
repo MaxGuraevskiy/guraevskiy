@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
@@ -100,18 +100,13 @@ function Header() {
           </a>
 
           {/* Burger Menu */}
-          {/* <button onClick={() => setIsBurgerOpen(true)}></button> */}
-          <input
-            type={"checkbox"}
-            value={String(isBurgerOpen)}
-            onChange={() => setIsBurgerOpen(true)}
-          >
+          <button onClick={() => setIsBurgerOpen(true)}>
             <Image
               src={burgerMenu_path}
               alt="burger menu icon"
               className="w-12 h-12 hover:cursor-pointer"
             />
-          </input>
+          </button>
         </div>
       </nav>
       {/* Modal window */}
