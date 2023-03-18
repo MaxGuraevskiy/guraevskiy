@@ -123,11 +123,6 @@ span {
 /* -- ↓ ↓ ↓ some responsiveness ↓ ↓ ↓ -- */
 
 @media (max-width: 1000px) {
-  body {
-    align-items: flex-start;
-    overflow: auto;
-  }
-
   #cards {
     max-width: 1000px;
     padding: 10px 0px;

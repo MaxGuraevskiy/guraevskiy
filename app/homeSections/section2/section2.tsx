@@ -85,23 +85,21 @@ function Section2() {
         }}
       >
         {data.map((e, index) => (
-          <Link href={"/experience"} key={`${e.title}${index}`}>
-            <div className="card" ref={e.cardRef}>
-              <div className="card-content">
-                <div className="card-image">
-                  <Image src={e.imgPath} alt={e.alt} className="card-image" />
-                </div>
-                <div className="card-info-wrapper">
-                  <div className="card-info">
-                    <div className="card-info-title">
-                      <h3 className="font-manrope">{e.title}</h3>
-                      <h4 className="font-manrope">{e.description}</h4>
-                    </div>
+          <div className="card" ref={e.cardRef} key={`${e.title}${index}`}>
+            <div className="card-content">
+              <div className="card-image">
+                <Image src={e.imgPath} alt={e.alt} className="card-image" />
+              </div>
+              <div className="card-info-wrapper">
+                <div className="card-info">
+                  <div className="card-info-title">
+                    <h3 className="font-manrope">{e.title}</h3>
+                    <h4 className="font-manrope">{e.description}</h4>
                   </div>
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </section>
