@@ -56,7 +56,8 @@
   width: 100vw;
   height: 100vh;
   translate: 0;
-  display: none;
+  /* display: none; */
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;

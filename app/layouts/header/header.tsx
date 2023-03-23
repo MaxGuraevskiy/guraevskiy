@@ -100,18 +100,79 @@ function Header() {
           </a>
 
           {/* Burger Menu */}
-          {/* <button onClick={() => setIsBurgerOpen(true)}> */}
-          <Image
-            src={burgerMenu_path}
-            alt="burger menu icon"
-            className="w-12 h-12 hover:cursor-pointer"
-            onClick={() => setIsBurgerOpen(true)}
-          />
-          {/* </button> */}
+          <button
+            onClick={() => {
+              console.log("button clicked");
+              setIsBurgerOpen(true);
+            }}
+          >
+            <Image
+              src={burgerMenu_path}
+              alt="burger menu icon"
+              className="w-12 h-12 hover:cursor-pointer"
+            />
+          </button>
         </div>
       </nav>
       {/* Modal window */}
-      <nav
+      {isBurgerOpen && (
+        <nav className={classNames(styles.modal, "transition mobile:flex-row")}>
+          <button
+            onClick={() => {
+              setIsBurgerOpen(false);
+            }}
+            className="fixed right-16 top-16"
+          >
+            <Image src={menu_close_path} alt="close modal search" />
+          </button>
+
+          <ul className={classNames("flex flex-col", {})}>
+            {headerLinksData.map(({ href, label }, i) => (
+              <li key={`modallink${i}`}>
+                <HeaderLinks href={href} label={label} />
+              </li>
+            ))}
+          </ul>
+
+          <Link
+            href="download/guraevskiymaxim.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:animate-pulse"
+          >
+            <h3
+              className={classNames(
+                styles.link,
+                "font-sans_pro hover:text-[#8e57f7]"
+              )}
+            >
+              Резюме
+            </h3>
+          </Link>
+
+          <div className="flex flex-col">
+            <div className="flex flex-col mobile:flex-row justify-center items-center space-y-10 mobile:space-x-10 mobile:space-y-0">
+              <Link href="https://t.me/guraevskiy">
+                <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
+                  Telegram
+                </h2>
+              </Link>
+              <Link href="https://github.com/MaxGuraevskiy">
+                <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
+                  GitHub
+                </h2>
+              </Link>
+              <Link href="https://linkedin.com">
+                <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
+                  LinkedIn
+                </h2>
+              </Link>
+            </div>
+          </div>
+        </nav>
+      )}
+
+      {/* <nav
         className={classNames(styles.modal, "transition ", {
           "flex flex-col mobile:flex-row": isBurgerOpen,
         })}
@@ -168,7 +229,7 @@ function Header() {
             </Link>
           </div>
         </div>
-      </nav>
+      </nav> */}
     </header>
   );
 }
