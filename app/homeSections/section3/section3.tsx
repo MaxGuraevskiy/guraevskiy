@@ -93,10 +93,9 @@ function Section3() {
     // const widths = children.map((e) => e?.clientWidth);
     track.current?.animate(
       {
-        // transform: `translate(${
-        //   (nextPercentage / 100) * children.length * 34
-        // }vmin, 0%)`,
-        translate: `${(nextPercentage / 100) * children.length * 34}vmin`,
+        transform: `translate(${
+          (nextPercentage / 100) * children.length * 34
+        }vmin, 0%)`,
       },
       { duration: 1200, fill: "forwards" }
     );
