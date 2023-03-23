@@ -51,6 +51,14 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  openGraph: {
+    title: "Max Guraevskiy",
+    description: "Max Guraevskiy. My portfolio",
+    url: "https://guraevskiy.vercel.app/",
+    siteName: "Max Guraevskiy",
+    locale: "ru_ru",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -62,7 +70,6 @@ export default function RootLayout({
     <>
       <html lang="ru" className={`${sans_pro.variable} ${manrope.variable}`}>
         <body className="">
-          {/* <body className="bg-[url('../public/bg_rocks.jpg')] bg-cover bg-repeat-y"> */}
           <Header />
           <div className=""></div>
           <Suspense fallback={<HomeLoading />}>{children}</Suspense>

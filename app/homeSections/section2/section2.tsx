@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import sneaker_path from "@/public/section2/sneaker.svg";
 import checkpoint_path from "@/public/section2/checkpoint.svg";
@@ -10,9 +11,10 @@ import profile_path from "@/public/section2/profile.svg";
 import more_path from "@/public/section2/more.svg";
 
 import "./section2.css";
-import Link from "next/link";
 
 function Section2() {
+  const router = useRouter();
+
   const card1 = useRef<HTMLDivElement>(null),
     card2 = useRef<HTMLDivElement>(null),
     card3 = useRef<HTMLDivElement>(null),
@@ -85,7 +87,12 @@ function Section2() {
         }}
       >
         {data.map((e, index) => (
-          <div className="card" ref={e.cardRef} key={`${e.title}${index}`}>
+          <div
+            className="card"
+            ref={e.cardRef}
+            key={`${e.title}${index}`}
+            onClick={() => router.push("/experience")}
+          >
             <div className="card-content">
               <div className="card-image">
                 <Image src={e.imgPath} alt={e.alt} className="card-image" />

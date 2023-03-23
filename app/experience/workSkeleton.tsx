@@ -27,6 +27,7 @@ const WorkSkeleton = ({ props }: { props: props }) => {
             src={props.src}
             alt=""
             className="w-[100vmin] mobile:w-[70vmin] object-contain"
+            placeholder="blur"
           />
           <div className="">
             <h2 className="font-sans_pro text-[2rem] small:text-[3rem] medium:text-[4rem]">
