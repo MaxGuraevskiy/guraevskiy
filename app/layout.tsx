@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: "Max Guraevskiy",
   description: "Max Guraevskiy. My portfolio",
   keywords: ["Guraevskiy", "Max Guraevskiy", "Next.js", "React", "JavaScript"],
-  authors: [{ name: "Max Guraevskiy", url: "https://guraevskiy.vercel.app/" }],
+  authors: [{ name: "Max Guraevskiy", url: "https://guraevskiy.ru/" }],
   creator: "Maxim Guraevskiy",
   // themeColor: [
   //   { media: "(prefers-color-scheme: light)", color: "white" },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     icon: "./icon.png",
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Max Guraevskiy",
     description: "Max Guraevskiy. My portfolio",
-    url: "https://guraevskiy.vercel.app/",
+    url: "https://guraevskiy.ru/",
     siteName: "Max Guraevskiy",
     locale: "ru_ru",
     type: "website",

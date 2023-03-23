@@ -70,11 +70,11 @@ function Section1() {
           <Image
             src={me_main_path}
             alt=""
-            className="rounded-full min-w-[30em] min-h-[30em] w-[40vmin] h-[40vmin]"
+            className="rounded-2xl min-w-[30em] min-h-[30em] w-[47vmin] h-[40vmin]"
             style={{ objectFit: "cover" }}
           />
 
-          <h1 className="font-manrope font-bold text-[3rem] small:text-[4rem] ">
+          <h1 className="font-manrope font-bold text-[3rem] small:text-[4rem] text-center">
             Максим Гураевский
           </h1>
 
