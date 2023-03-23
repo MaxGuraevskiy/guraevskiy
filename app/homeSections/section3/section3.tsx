@@ -103,9 +103,6 @@ function Section3() {
       image?.animate(
         {
           objectPosition: `${100 + nextPercentage}% center`,
-          webkitobjectPosition: `${100 + nextPercentage}% center`,
-          mozobjectPosition: `${100 + nextPercentage}% center`,
-          oobjectPosition: `${100 + nextPercentage}% center`,
         },
         { duration: 1200, fill: "forwards" }
       );
