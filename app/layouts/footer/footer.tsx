@@ -29,7 +29,7 @@ const links = [
     title: "GitHub",
   },
   {
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/maximguraevskiy/",
     title: "LinkedIn",
   },
 ];

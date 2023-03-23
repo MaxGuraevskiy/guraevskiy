@@ -162,7 +162,7 @@ function Header() {
                   GitHub
                 </h2>
               </Link>
-              <Link href="https://linkedin.com">
+              <Link href="https://www.linkedin.com/in/maximguraevskiy/">
                 <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
                   LinkedIn
                 </h2>
@@ -171,65 +171,6 @@ function Header() {
           </div>
         </nav>
       )}
-
-      {/* <nav
-        className={classNames(styles.modal, "transition ", {
-          "flex flex-col mobile:flex-row": isBurgerOpen,
-        })}
-      >
-        <button
-          onClick={() => {
-            setIsBurgerOpen(false);
-          }}
-          className="fixed right-16 top-16"
-        >
-          <Image src={menu_close_path} alt="close modal search" />
-        </button>
-
-        <ul className={classNames("flex flex-col", {})}>
-          {headerLinksData.map(({ href, label }, i) => (
-            <li key={`modallink${i}`}>
-              <HeaderLinks href={href} label={label} />
-            </li>
-          ))}
-        </ul>
-
-        <Link
-          href="download/guraevskiymaxim.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:animate-pulse"
-        >
-          <h3
-            className={classNames(
-              styles.link,
-              "font-sans_pro hover:text-[#8e57f7]"
-            )}
-          >
-            Резюме
-          </h3>
-        </Link>
-
-        <div className="flex flex-col">
-          <div className="flex flex-col mobile:flex-row justify-center items-center space-y-10 mobile:space-x-10 mobile:space-y-0">
-            <Link href="https://t.me/guraevskiy">
-              <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
-                Telegram
-              </h2>
-            </Link>
-            <Link href="https://github.com/MaxGuraevskiy">
-              <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
-                GitHub
-              </h2>
-            </Link>
-            <Link href="https://linkedin.com">
-              <h2 className="font-manrope text-[1.8rem] font-normal hover:underline">
-                LinkedIn
-              </h2>
-            </Link>
-          </div>
-        </div>
-      </nav> */}
     </header>
   );
 }
