@@ -100,13 +100,14 @@ function Header() {
           </a>
 
           {/* Burger Menu */}
-          <button onClick={() => setIsBurgerOpen(true)}>
-            <Image
-              src={burgerMenu_path}
-              alt="burger menu icon"
-              className="w-12 h-12 hover:cursor-pointer"
-            />
-          </button>
+          {/* <button onClick={() => setIsBurgerOpen(true)}> */}
+          <Image
+            src={burgerMenu_path}
+            alt="burger menu icon"
+            className="w-12 h-12 hover:cursor-pointer"
+            onClick={() => setIsBurgerOpen(true)}
+          />
+          {/* </button> */}
         </div>
       </nav>
       {/* Modal window */}
