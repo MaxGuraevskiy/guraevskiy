@@ -8,7 +8,8 @@
   gap: 4vmin;
   position: relative;
   left: 50%;
-
+  /* transform: translate(0%, 0%); */
+  translate: 0vmin;
   user-select: none;
   z-index: 3;
   /* -- Prevent image highlighting -- */
