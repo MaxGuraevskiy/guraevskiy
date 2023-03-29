@@ -6,8 +6,9 @@ import keyboard from "@/public/imageCarousel/keyboard.jpg";
 import building from "@/public/imageCarousel/building.jpg";
 import cars from "@/public/imageCarousel/cars.jpg";
 import gym from "@/public/imageCarousel/gym.jpg";
-import gym_deadlift from "@/public/imageCarousel/gym_deadlift.jpg";
+// import gym_deadlift from "@/public/imageCarousel/gym_deadlift.jpg";
 import maverick from "@/public/imageCarousel/maverick.jpg";
+import guitars from "@/public/imageCarousel/guitars.jpg";
 import keyboard_with_kitten from "@/public/imageCarousel/keyboard_with_kitten.jpg";
 
 import "./section3.css";
@@ -39,9 +40,9 @@ function Section3() {
       alt: "Photo of my maverick 1000R XMR",
     },
     {
-      imgRef: image7,
-      imgPath: gym,
-      alt: "Me on the gym",
+      imgRef: image3,
+      imgPath: guitars,
+      alt: "My guitars",
     },
     {
       imgRef: image4,
@@ -58,28 +59,22 @@ function Section3() {
       imgPath: building,
       alt: "Me checking father`s drill machine",
     },
-    // {
-    //   imgRef: image3,
-    //   imgPath: gym_deadlift,
-    //   alt: "Light weights",
-    // },
+    {
+      imgRef: image7,
+      imgPath: gym,
+      alt: "Me on the gym",
+    },
   ];
 
-  const DownHandle = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.Touch
-  ) => {
+  const DownHandle = (e: React.PointerEvent<HTMLDivElement>) => {
     setMouseDownAt(e.clientX);
   };
-  const UpHandle = (
-    e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const UpHandle = (e: React.PointerEvent<HTMLDivElement>) => {
     setMouseDownAt(0);
     setPrevPercentage(percentage);
   };
 
-  const MoveHandle = (
-    e: React.Touch | React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
+  const MoveHandle = (e: React.PointerEvent<HTMLDivElement>) => {
     if (mouseDownAt === 0) return;
     const mouseDelta = mouseDownAt - e.clientX;
     const maxDelta = window.innerWidth / 2;
@@ -104,14 +99,14 @@ function Section3() {
         }vmin, 0%)`,
         // translate: `${(nextPercentage / 100) * children.length * 34}vmin`,
       },
-      { duration: 1200, fill: "forwards", iterations: 1 }
+      { duration: 1200 }
     );
     for (const image of children) {
       image?.animate(
         {
           objectPosition: `${100 + nextPercentage}% center`,
         },
-        { duration: 1200, fill: "forwards", iterations: 1 }
+        { duration: 1200 }
       );
     }
     setNextPercentage(nextPercentage);
@@ -125,21 +120,15 @@ function Section3() {
       <div
         id="image-track"
         ref={track}
-        // onPointerDown={(e) => {
-        //   DownHandle(e);
-        // }}
-        // onPointerUp={(e) => {
-        //   UpHandle(e);
-        // }}
-        // onPointerMove={(e) => {
-        //   MoveHandle(e);
-        // }}
-        onMouseDown={(e) => DownHandle(e)}
-        onTouchStart={(e) => DownHandle(e.touches[0])}
-        onMouseUp={(e) => UpHandle(e)}
-        onTouchEnd={(e) => UpHandle(e.touches[0])}
-        onMouseMove={(e) => MoveHandle(e)}
-        onTouchMove={(e) => MoveHandle(e.touches[0])}
+        onPointerDown={(e) => {
+          DownHandle(e);
+        }}
+        onPointerUp={(e) => {
+          UpHandle(e);
+        }}
+        onPointerMove={(e) => {
+          MoveHandle(e);
+        }}
       >
         {data.map((e, index) => (
           <Image
