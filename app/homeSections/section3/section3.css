@@ -8,11 +8,11 @@
   gap: 4vmin;
   position: relative;
   left: 50%;
-  /* transform: translate(0%, 0%); */
-  translate: 0vmin;
+  transform: translate(0%, 0%);
   user-select: none;
   z-index: 3;
-  /* -- Prevent image highlighting -- */
+  transition: transform 1200ms 0ms ease-in-out;
+  -webkit-transition: transform 1200ms 0ms ease-in-out;
 }
 
 #image-track > .image {
@@ -20,6 +20,8 @@
   height: 44vmin;
   object-fit: cover;
   object-position: 100% center;
+  transition: object-position 1200ms 0ms ease-in-out;
+  -webkit-transition: object-position 1200ms 0ms ease-in-out;
 }
 
 input[type="range"] {

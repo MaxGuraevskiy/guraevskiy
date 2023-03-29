@@ -92,25 +92,36 @@ function Section3() {
     const children = data.map((e) => e.imgRef.current);
     // const count = children.length;
     // const widths = children.map((e) => e?.clientWidth);
-    track.current?.animate(
-      {
-        transform: `translate(${
-          (nextPercentage / 100) * children.length * 34
-        }vmin, 0%)`,
-        // translate: `${(nextPercentage / 100) * children.length * 34}vmin`,
-      },
-      { duration: 0, fill: "both" }
-    );
+    track.current!.style.transform = `translate(${
+      (nextPercentage / 100) * children.length * 34
+    }vmin, 0%)`;
+
     for (const image of children) {
-      image?.animate(
-        {
-          objectPosition: `${100 + nextPercentage}% center`,
-        },
-        { duration: 0, fill: "both" }
-      );
+      image!.style.objectPosition = `${100 + nextPercentage}% center`;
     }
     setNextPercentage(nextPercentage);
   };
+
+  // keyframes don't work as they should on older devices, so I'm using
+  // the usual transition here. Here is the code if keyframes supported
+  // older versions of browsers
+
+  // track.current?.animate(
+  //   {
+  //     transform: `translate(${
+  //       (nextPercentage / 100) * children.length * 34
+  //     }vmin, 0%)`,
+  //     // translate: `${(nextPercentage / 100) * children.length * 34}vmin`,
+  //   },
+  //   { duration: 0, fill: "forwards" }
+  // );
+
+  // image?.animate(
+  //   {
+  //     objectPosition: `${100 + nextPercentage}% center`,
+  //   },
+  //   { duration: 0, fill: "forwards" }
+  // );
 
   return (
     <section id="hobbies">
@@ -118,8 +129,7 @@ function Section3() {
         Увлечения
       </h1>
       <div
-        id="image-track"
-        ref={track}
+        className="w-full"
         onPointerDown={(e) => {
           DownHandle(e);
         }}
@@ -129,17 +139,22 @@ function Section3() {
         onPointerMove={(e) => {
           MoveHandle(e);
         }}
+        onPointerLeave={(e) => {
+          UpHandle(e);
+        }}
       >
-        {data.map((e, index) => (
-          <Image
-            key={index}
-            src={e.imgPath}
-            alt={e.alt}
-            ref={e.imgRef}
-            className="image"
-            draggable={false}
-          />
-        ))}
+        <div id="image-track" ref={track}>
+          {data.map((e, index) => (
+            <Image
+              key={index}
+              src={e.imgPath}
+              alt={e.alt}
+              ref={e.imgRef}
+              className="image"
+              draggable={false}
+            />
+          ))}
+        </div>
       </div>
 
       <input
