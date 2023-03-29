@@ -1,5 +1,6 @@
 #Feedback {
   padding-top: 5vmin;
+  min-height: fit-content;
 }
 
 @media (prefers-reduced-motion) {

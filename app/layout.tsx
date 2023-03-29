@@ -30,13 +30,9 @@ export const metadata: Metadata = {
   keywords: ["Guraevskiy", "Max Guraevskiy", "Next.js", "React", "JavaScript"],
   authors: [{ name: "Max Guraevskiy", url: "https://guraevskiy.ru/" }],
   creator: "Maxim Guraevskiy",
-  // themeColor: [
-  //   { media: "(prefers-color-scheme: light)", color: "white" },
-  //   { media: "(prefers-color-scheme: dark)", color: "black" },
-  // ],
   themeColor: { color: "dark" },
   icons: {
-    icon: "./icon.png",
+    icon: "./favicon.ico",
   },
   robots: {
     index: true,
