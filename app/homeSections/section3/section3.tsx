@@ -99,14 +99,14 @@ function Section3() {
         }vmin, 0%)`,
         // translate: `${(nextPercentage / 100) * children.length * 34}vmin`,
       },
-      { duration: 1200 }
+      { duration: 0, fill: "both" }
     );
     for (const image of children) {
       image?.animate(
         {
           objectPosition: `${100 + nextPercentage}% center`,
         },
-        { duration: 1200 }
+        { duration: 0, fill: "both" }
       );
     }
     setNextPercentage(nextPercentage);
