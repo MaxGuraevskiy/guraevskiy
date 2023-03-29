@@ -157,6 +157,7 @@ function Section3() {
         </div>
       </div>
 
+      <h3 className="font-manrope">Можешь попробовать свайп</h3>
       <input
         id="rangeSwiper"
         type={"range"}
@@ -166,7 +167,6 @@ function Section3() {
         onChange={(x) => SwipeAnimation(parseFloat(x.target.value))}
         step="any"
       />
-      <h3 className="">Можешь попробовать свайп</h3>
     </section>
   );
 }
