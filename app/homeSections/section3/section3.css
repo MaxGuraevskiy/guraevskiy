@@ -24,14 +24,12 @@
   -webkit-transition: object-position 1200ms 0ms ease-in-out; */
 }
 
-@supports (transition: initial) {
+@supports (transition: object-position 1200ms 0ms ease-in-out) {
   #image-track {
     transition: transform 1200ms 0ms ease-in-out;
-    -webkit-transition: transform 1200ms 0ms ease-in-out;
   }
   #image-track > .image {
     transition: object-position 1200ms 0ms ease-in-out;
-    -webkit-transition: object-position 1200ms 0ms ease-in-out;
   }
 }
 
