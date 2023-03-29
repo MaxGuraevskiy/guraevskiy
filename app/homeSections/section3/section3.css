@@ -12,7 +12,6 @@
   user-select: none;
   z-index: 3;
   transition: transform 1200ms 0ms ease-in-out;
-  -webkit-transition: transform 1200ms 0ms ease-in-out;
 }
 
 #image-track > .image {
@@ -21,7 +20,6 @@
   object-fit: cover;
   object-position: 100% center;
   transition: object-position 1200ms 0ms ease-in-out;
-  -webkit-transition: object-position 1200ms 0ms ease-in-out;
 }
 
 input[type="range"] {
