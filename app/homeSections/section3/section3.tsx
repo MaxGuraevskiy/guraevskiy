@@ -150,7 +150,7 @@ function Section3() {
               src={e.imgPath}
               alt={e.alt}
               ref={e.imgRef}
-              className="image"
+              className="image transition-[object-position] duration-[1200ms] ease-in-out"
               draggable={false}
             />
           ))}
