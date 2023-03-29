@@ -156,8 +156,7 @@ function Section3() {
           ))}
         </div>
       </div>
-
-      <h3 className="font-manrope">Можешь попробовать свайп</h3>
+      
       <input
         id="rangeSwiper"
         type={"range"}
