@@ -150,7 +150,7 @@ function Section3() {
               src={e.imgPath}
               alt={e.alt}
               ref={e.imgRef}
-              className="image transition-[object-position] duration-[1200ms] ease-in-out"
+              className="image"
               draggable={false}
             />
           ))}
@@ -166,6 +166,7 @@ function Section3() {
         onChange={(x) => SwipeAnimation(parseFloat(x.target.value))}
         step="any"
       />
+      <h3 className="">Можешь попробовать свайп</h3>
     </section>
   );
 }
