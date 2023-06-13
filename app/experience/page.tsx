@@ -86,6 +86,7 @@ const work4 = {
   имел возможность делать свои заказы онлайн.`,
   links: [
     { link: "https://github.com/MaxGuraevskiy/typography", title: "GitHub" },
+    { link: "https://typography.gatsbyjs.io/", title: "Source" },
   ],
 };
 
