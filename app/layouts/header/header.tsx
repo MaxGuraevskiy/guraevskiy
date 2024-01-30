@@ -15,9 +15,7 @@ function Header() {
   type headerLinksDataType = { href: string; label: string };
   // Header Links Data
   const headerLinksData: headerLinksDataType[] = [
-    { href: "/experience", label: "Работы" },
-    { href: "/about", label: "Обо мне" },
-  ];
+    { href: "/experience", label: "Работы" }  ];
   // Header Links function
   const HeaderLinks = ({ href, label }: headerLinksDataType) => {
     return (
